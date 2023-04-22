@@ -41,6 +41,17 @@ export default function HomePage() {
             own terms.
           </p>
         </div>
+        <div className='col-span-6 -rotate-2 border border-black p-3 md:col-span-2'>
+          <Image
+            src='https://spotlight.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportrait.79754e9e.jpg&w=1080&q=75'
+            alt='profil pic'
+            width='0'
+            height='0'
+            sizes='100vw'
+            className=' h-auto w-full  shadow'
+          />
+          <p className='py-4'>Lorem ipsum dolor sit amet</p>
+        </div>
       </section>
       <section className='mt-16 grid grid-cols-6 gap-6 lg:px-12'>
         {[0, 1, 2, 3].map((i) => (
