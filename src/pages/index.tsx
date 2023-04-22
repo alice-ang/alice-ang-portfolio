@@ -1,20 +1,8 @@
-import * as React from 'react';
+import Image from 'next/image';
+import { MdWork } from 'react-icons/md';
 
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Vercel from '~/svg/Vercel.svg';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -26,49 +14,103 @@ export default function HomePage() {
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
-      <main>
-        <section className='bg-white'>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
-            </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
+      <nav className='flex justify-between px-4 py-6 md:justify-around'>
+        <Image
+          src='/alice.png'
+          alt='profil pic'
+          width='0'
+          height='0'
+          sizes='100vw'
+          className=' h-9 w-9 rounded-full shadow'
+        />
+        <ul className='flex bg-red-700'>
+          <li>hej</li>
+          <li>few</li>
+        </ul>
+        hej
+      </nav>
+      <section className='mt-16 grid grid-cols-6 gap-16 lg:px-12'>
+        <div className='col-span-6 p-8 md:col-span-4'>
+          <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
+            Software designer, founder, and amateur astronaut.
+          </h1>
+          <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
+            I’m Spencer, a software designer and entrepreneur based in New York
+            City. I’m the founder and CEO of Planetaria, where we develop
+            technologies that empower regular people to explore space on their
+            own terms.
+          </p>
+        </div>
+      </section>
+      <section className='mt-16 grid grid-cols-6 gap-6 lg:px-12'>
+        {[0, 1, 2, 3].map((i) => (
+          <div
+            className='col-span-6 rounded-2xl p-8 hover:bg-zinc-100 md:col-span-4'
+            key={i}
+          >
+            <div className='flex items-center justify-between'>
+              <div className='flex flex-col'>
+                <p className='text-sm'>hej</p>
+                <h3 className='text-2xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 '>
+                  Bostadsbetyg
+                </h3>
+              </div>
 
-            <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
-            </ButtonLink>
-
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
+              <Image
+                src='/alice.png'
+                alt='profil pic'
+                width='0'
+                height='0'
+                sizes='100vw'
+                className=' h-9 w-9 rounded-full shadow'
               />
-            </UnstyledLink>
+            </div>
 
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
+            <p className='mt-4 text-base text-zinc-600 dark:text-zinc-400'>
+              I’m Spencer, a software designer and entrepreneur based in New
+              York City. I’m the founder and CEO of Planetaria, where we develop
+              technologies that empower regular people to explore space on their
+              own terms.
+            </p>
+            <div className='flex flex-wrap items-center pt-12 '>
+              {[0, 1, 2].map((i) => (
+                <div
+                  className='mr-3 rounded-full border border-zinc-200 bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-1 text-sm text-white md:mr-4'
+                  key={i}
+                >
+                  NextJS
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-      </main>
+        ))}
+
+        <div className='border-grey-300 col-span-6 rounded-2xl border px-6 py-8 md:col-span-2 '>
+          <div className='flex pb-6'>
+            <MdWork size={22} className='text-zinc-300' />
+            <p className='ml-4 text-base'>Arbete</p>
+          </div>
+          <ul>
+            {[0, 1, 2].map((i) => (
+              <li className='flex items-center py-2' key={i}>
+                <Image
+                  src='/alice.png'
+                  alt='profil pic'
+                  width='0'
+                  height='0'
+                  sizes='100vw'
+                  className=' mr-3 h-10 w-10 rounded-full p-1 shadow-md'
+                />
+                <div className='flex flex-1 flex-col text-sm'>
+                  <p>Petli</p>
+                  <p className='text-zinc-400'>Frontend utvecklare</p>
+                </div>
+                <p className='text-sm text-zinc-500'>jun - dec 2022</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </Layout>
   );
 }

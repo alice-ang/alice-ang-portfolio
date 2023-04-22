@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
+  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -9,19 +10,16 @@ export default {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: {
-          // Customize it on globals.css :root
-          50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
-          100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
-          200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
-          300: 'rgb(var(--tw-color-primary-300) / <alpha-value>)',
-          400: 'rgb(var(--tw-color-primary-400) / <alpha-value>)',
-          500: 'rgb(var(--tw-color-primary-500) / <alpha-value>)',
-          600: 'rgb(var(--tw-color-primary-600) / <alpha-value>)',
-          700: 'rgb(var(--tw-color-primary-700) / <alpha-value>)',
-          800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
-          900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
-          950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
+        palette: {
+          green: '#77b39d',
+          yellow: '#ffdc9a',
+          pink: '#e8acc1',
+          beige: '#fff9eb',
+          purple: '#c1befb',
+          lightGrey: '#f1f1f1',
+          transparent: 'transparent',
+          current: 'currentColor',
+          white: '#ffffff',
         },
         dark: '#222222',
       },
