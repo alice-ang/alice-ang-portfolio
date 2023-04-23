@@ -22,7 +22,7 @@ export const Footer = () => {
             <a
               key={item.name}
               href={item.href}
-              className='text-gray-400 hover:text-gray-500'
+              className='hover:text-palette-green text-black'
             >
               <span className='sr-only'>{item.name}</span>
               <item.icon className='h-6 w-6' aria-hidden='true' />
@@ -33,7 +33,7 @@ export const Footer = () => {
           <span className='flex items-center text-center text-sm leading-5 text-gray-500'>
             &copy; {new Date().getFullYear()} | Developed with
             <AiFillHeart size={16} className='text-palette-pink mx-1' /> by
-            Alice Anglesjö with
+            Alice Anglesjö
           </span>
         </div>
       </div>
