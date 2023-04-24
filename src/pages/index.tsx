@@ -15,7 +15,7 @@ export default function HomePage() {
       <section className='mt-16 grid grid-cols-6 gap-8 lg:px-12'>
         <div className='col-span-6 p-8 md:col-span-4'>
           <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
-            Software designer, founder, and amateur astronaut.
+            Lorem ipsum dolor sit amet
           </h1>
           <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
             I’m Spencer, a software designer and entrepreneur based in New York
@@ -84,28 +84,11 @@ export default function HomePage() {
         <div className=' col-span-6 md:col-span-2 md:p-6 '>
           <div
             aria-label='sidebar'
-            className='sticky top-4 rounded-2xl border border-black p-8'
+            className='sticky top-4  border-l border-black p-8'
           >
             <h4 className='text-center text-xl font-extrabold tracking-tight text-gray-700 sm:text-3xl'>
-              Betyg
+              Work
             </h4>
-            <dl className=' mt-4 space-y-4  '>ceölf,äwel,f</dl>
-            <div className='mt-8 border-t border-gray-200 pt-10'>
-              <h4 className='pb-4 text-center text-xl font-extrabold tracking-tight text-gray-700 sm:text-3xl'>
-                Karta
-              </h4>
-              <div className='h-[250px]'>
-                <iframe
-                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8364.976577639782!2d13.836858432796966!3d58.38928326703061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465b023d3a4c413d%3A0x817d30b9033d4604!2zU2vDtnZkZQ!5e0!3m2!1ssv!2sse!4v1678730360113!5m2!1ssv!2sse'
-                  width='100%'
-                  height='100%'
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  aria-hidden='false'
-                  tabIndex={0}
-                />
-              </div>
-            </div>
           </div>
         </div>
         {/* <div className='border-grey-300 col-span-6 rounded-2xl border px-6 py-8 md:col-span-2 '>
