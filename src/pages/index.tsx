@@ -10,23 +10,8 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
-      <Seo />
+      <Seo templateTitle='Alice Anglesjö' />
 
-      <nav className='mx-auto w-1/2 rounded-full border border-black px-4 py-6'>
-        {/* <Image
-          src='/alice.png'
-          alt='profil pic'
-          width='0'
-          height='0'
-          sizes='100vw'
-          className=' h-9 w-9 rounded-full shadow'
-        /> */}
-        <ul className='flex items-center justify-between '>
-          <li>hej</li>
-          <li>few</li>
-        </ul>
-      </nav>
       <section className='mt-16 grid grid-cols-6 gap-8 lg:px-12'>
         <div className='col-span-6 p-8 md:col-span-4'>
           <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
@@ -40,7 +25,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className='duration-350 col-span-6 p-8 transition ease-in-out md:col-span-2 md:hover:-rotate-2'>
-          <div className='border border-black p-3'>
+          <div className='dark:border-zinc-70 border border-black p-3'>
             <Image
               src='/alice.png'
               alt='profil pic'
