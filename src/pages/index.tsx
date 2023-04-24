@@ -103,7 +103,7 @@ const HomePage = ({ props }: any) => {
                 >
                   <span className='sr-only'>{social.name}</span>
                   <social.icon
-                    className='dark:fill-palette-yellow mr-2 h-6 w-6'
+                    className='dark:fill-palette-yellow mr-2 h-6 w-6 dark:hover:fill-zinc-600'
                     aria-hidden='true'
                   />
                 </a>
@@ -169,7 +169,7 @@ const HomePage = ({ props }: any) => {
     </>
   );
 };
-const projectQuery = groq`*[_type == "project"] | order(createdAt desc) {
+const projectQuery = groq`*[_type == "project" && isAcive == true] | order(createdAt desc) {
   title,
   "categories": categories[]->title,
   "imagesGallery": imagesGallery[].asset->url,
@@ -177,6 +177,7 @@ const projectQuery = groq`*[_type == "project"] | order(createdAt desc) {
   githubUrl,
   body,
   createdAt,
+  isAcive,
   "mainImage": mainImage.asset->url
 }`;
 HomePage.getInitialProps = async function () {

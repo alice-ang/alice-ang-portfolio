@@ -51,4 +51,5 @@ export type ProjectType = {
   imagesGallery: string[];
   demoUrl?: string;
   githubUrl?: string;
+  isAcive: boolean;
 };

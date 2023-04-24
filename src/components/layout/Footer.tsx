@@ -2,13 +2,13 @@ import { AiFillGithub, AiFillHeart, AiFillLinkedin } from 'react-icons/ai';
 const navigation = [
   {
     name: 'Linkedin',
-    href: '#',
+    href: 'https://www.linkedin.com/in/alice-anglesj%C3%B6-9503121a7/',
     icon: AiFillLinkedin,
   },
 
   {
     name: 'GitHub',
-    href: '#',
+    href: 'https://github.com/alice-ang',
     icon: AiFillGithub,
   },
 ];
@@ -22,6 +22,7 @@ export const Footer = () => {
             <a
               key={item.name}
               href={item.href}
+              target='_blank'
               className='hover:text-palette-green text-black'
             >
               <span className='sr-only'>{item.name}</span>

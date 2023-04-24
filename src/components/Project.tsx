@@ -1,6 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { AiFillGithub, AiFillSmile } from 'react-icons/ai';
 
 import { ProjectType } from '@/lib/helper';
 import { useModal } from '@/lib/useModal';
@@ -37,9 +38,11 @@ export const Project = ({ project }: Props) => {
               </span>
               Developed in {new Date(project.createdAt).getFullYear()}
             </time>
-            <h3 className='text-xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 '>
-              {project.title}
-            </h3>
+            <div>
+              <h3 className='text-xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 '>
+                {project.title}
+              </h3>
+            </div>
           </div>
 
           {/* <Image
@@ -67,7 +70,7 @@ export const Project = ({ project }: Props) => {
               width='0'
               height='0'
               sizes='100vw'
-              className=' h-auto w-full rounded shadow'
+              className=' h-auto max-h-[700px] w-full rounded object-contain shadow'
             />
 
             <div className='my-2 grid grid-cols-4 gap-2 md:my-4 md:gap-4'>
@@ -85,17 +88,34 @@ export const Project = ({ project }: Props) => {
                   />
                 ))}
             </div>
+            <div className=''>
+              <h3 className='text-zinc-800 dark:text-zinc-100'>
+                {project.title}
+              </h3>
+              <span className='flex items-center'>
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target='_blank'>
+                    <AiFillGithub className='dark:fill-palette-yellow my-2 mr-2 h-6 w-6 cursor-pointer dark:hover:fill-zinc-600' />
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target='_blank'>
+                    <AiFillSmile
+                      className='dark:fill-palette-yellow my-2 mr-2 h-6 w-6 cursor-pointer dark:hover:fill-zinc-600'
+                      cursor-pointer
+                    />
+                  </a>
+                )}
+              </span>
+            </div>
 
-            <h3 className='text-zinc-800 dark:text-zinc-100'>
-              {project.title}
-            </h3>
             <PortableText value={project.body} />
             {project.categories && (
               <div className='mt-4 flex flex-wrap items-center'>
                 {project.categories.map((category, i) => (
                   <div
-                    className='p1627MIka mb-2 mr-3 rounded-full border border-zinc-200 bg-gradient-to-r from-cyan-500 to-blue-500 px-3
-                     text-white md:mr-4'
+                    className='bg-palette-yellow mb-2 mr-3 rounded-full border border-black px-4 py-1 text-xs text-black
+                    md:mr-4'
                     key={i}
                   >
                     {category}
