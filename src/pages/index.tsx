@@ -103,7 +103,7 @@ const HomePage = ({ props }: any) => {
                 >
                   <span className='sr-only'>{social.name}</span>
                   <social.icon
-                    className='dark:fill-palette-yellow mr-2 h-6 w-6 dark:hover:fill-zinc-600'
+                    className='dark:fill-palette-yellow mr-p2 h-6 w-6 dark:hover:fill-zinc-600'
                     aria-hidden='true'
                   />
                 </a>

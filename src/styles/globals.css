@@ -41,6 +41,10 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
+  body {
+    @apply bg-zinc-50 dark:bg-black;
+    overflow-x: hidden;
+  }
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
