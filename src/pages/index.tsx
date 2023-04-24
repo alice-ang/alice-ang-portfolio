@@ -31,17 +31,18 @@ const images = [
     url: '/doggo.png',
     alt: 'Little Märta',
   },
-  {
-    title: null,
-    icon: null,
-    url: '/quizzly.png',
-    alt: 'Quizzly app',
-  },
+
   {
     title: null,
     icon: null,
     url: '/his.png',
     alt: 'Högskolan i Skövde',
+  },
+  {
+    title: null,
+    icon: null,
+    url: '/quizzly.png',
+    alt: 'Quizzly app',
   },
 ];
 
