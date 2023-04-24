@@ -94,7 +94,8 @@ export const Project = ({ project }: Props) => {
               <div className='mt-4 flex flex-wrap items-center'>
                 {project.categories.map((category, i) => (
                   <div
-                    className='mb-2 mr-3 rounded-full border border-zinc-200 bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-1 text-sm text-white md:mr-4'
+                    className='p1627MIka mb-2 mr-3 rounded-full border border-zinc-200 bg-gradient-to-r from-cyan-500 to-blue-500 px-3
+                     text-white md:mr-4'
                     key={i}
                   >
                     {category}

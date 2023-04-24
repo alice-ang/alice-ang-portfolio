@@ -17,13 +17,13 @@ export const Browser = ({ src, className, children, onClose }: Props) => {
         'overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10 dark:border-zinc-700/40 dark:bg-zinc-800'
       )}
     >
-      <div className='flex items-center border-b bg-slate-50 p-4 dark:border-zinc-700/40 dark:bg-zinc-500'>
-        <div
-          className='mr-1 h-2 w-2 rounded-full bg-red-400 '
-          onClick={onClose}
-        />
-        <div className='mr-1 h-2 w-2 rounded-full bg-yellow-400' />
-        <div className='mr-1 h-2 w-2 rounded-full bg-green-400' />
+      <div
+        className='flex items-center border-b bg-slate-50 p-4 dark:border-zinc-700/40 dark:bg-zinc-700'
+        onClick={onClose}
+      >
+        <div className='mr-1 h-3 w-3 cursor-pointer rounded-full bg-red-400' />
+        <div className='mr-1 h-3 w-3 rounded-full bg-yellow-400' />
+        <div className='mr-1 h-3 w-3 rounded-full bg-green-400' />
       </div>
       {src && <Image className='w-full' src={src} alt='' />}
       {children && (

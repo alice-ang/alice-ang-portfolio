@@ -89,8 +89,9 @@ const HomePage = ({ props }: any) => {
             <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
               Frontend developer who likes to try out different technologies.
               When I am not in front of the computer doing either 👩🏻‍💻 or 🎮, I
-              enjoy spending some quality time with my dog. I am currently
-              spending all of my time
+              enjoy spending some quality time with my dog. I am currently a
+              part of the startup program at Science Park Skövde spending all of
+              my time trying to start a company.
             </p>
             <span className='mt-4 flex items-center'>
               {socials.map((social) => (
@@ -142,7 +143,7 @@ const HomePage = ({ props }: any) => {
                         width='0'
                         height='0'
                         sizes='100vw'
-                        className=' mr-3 h-9 w-9 rounded-full bg-white p-1'
+                        className=' mr-3 h-9 w-9 rounded-full bg-white p-1 dark:bg-zinc-500'
                       />
                       <div>
                         <p className='font-semibold'>{item.company}</p>
