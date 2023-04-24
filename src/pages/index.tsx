@@ -57,14 +57,21 @@ const images = [
 
 const work = [
   {
-    logo: '/alice.png',
+    logo: '/quizzly.png',
+    company: 'Quizzly',
+    role: 'Developer / aspiring founder',
+    start: '2023',
+    end: 'current',
+  },
+  {
+    logo: '/petli.png',
     company: 'Petli',
     role: 'Frontend developer',
     start: '2022',
-    end: null,
+    end: '2023',
   },
   {
-    logo: '/alice.png',
+    logo: '/paf.png',
     company: 'Paf',
     role: 'Junior frontend developer',
     start: '2020',
@@ -84,7 +91,7 @@ const HomePage = ({ props }: any) => {
         <section className='grid grid-cols-6 gap-8 pt-6 md:pt-12 lg:px-12'>
           <div className='col-span-6 p-8 md:col-span-4'>
             <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
-              Lorem ipsum dolor sit amet
+              Hello, I'm Alice 👋
             </h1>
             <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
               Frontend developer who likes to try out different technologies.
@@ -118,7 +125,7 @@ const HomePage = ({ props }: any) => {
         </section>
         <section className='grid grid-cols-6 lg:px-12'>
           <h3 className='col-span-6 px-8 pt-8  text-2xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 '>
-            👩‍💻 Currently working on
+            👩‍💻 Some projects through the years
           </h3>
           <div className='col-span-6 md:col-span-4'>
             {Object.values(projectData).map((project, i) => (
@@ -143,7 +150,7 @@ const HomePage = ({ props }: any) => {
                         width='0'
                         height='0'
                         sizes='100vw'
-                        className=' mr-3 h-9 w-9 rounded-full bg-white p-1 dark:bg-zinc-500'
+                        className=' mr-3 h-9 w-9 rounded-full bg-white object-contain p-1 dark:bg-zinc-500'
                       />
                       <div>
                         <p className='font-semibold'>{item.company}</p>

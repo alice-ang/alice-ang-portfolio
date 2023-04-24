@@ -19,7 +19,7 @@ export const Polaroid = ({ pic, isRotated }: Props) => {
     <div
       className={classNames(
         isRotated ? 'rotate-2' : '-rotate-2',
-        'relative w-44 flex-none  border border-black bg-white p-4 text-center shadow-lg dark:border-zinc-600 dark:bg-zinc-700 md:w-72'
+        'relative w-44 flex-none border border-black bg-white p-4 text-center shadow-lg dark:border-zinc-600 dark:bg-zinc-700 md:w-72'
       )}
     >
       <span className='absolute -top-5 text-3xl md:-top-7 md:text-4xl'>📍</span>
