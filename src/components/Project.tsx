@@ -98,8 +98,8 @@ export const Project = ({ project }: Props) => {
                     <AiFillGithub className='dark:fill-palette-yellow my-2 mr-2 h-6 w-6 cursor-pointer dark:hover:fill-zinc-600' />
                   </a>
                 )}
-                {project.githubUrl && (
-                  <a href={project.githubUrl} target='_blank'>
+                {project.demoUrl && (
+                  <a href={project.demoUrl} target='_blank'>
                     <AiFillSmile
                       className='dark:fill-palette-yellow my-2 mr-2 h-6 w-6 cursor-pointer dark:hover:fill-zinc-600'
                       cursor-pointer
