@@ -47,4 +47,9 @@ export type ProjectType = {
   createdAt: string;
   body: PortableTextBlock;
   categories: string[];
+  mainImage: string;
+  imagesGallery: string[];
+  demoUrl?: string;
+  githubUrl?: string;
+  isAcive: boolean;
 };

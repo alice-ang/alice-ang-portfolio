@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['spotlight.tailwindui.com'],
+    domains: ['spotlight.tailwindui.com', 'cdn.sanity.io'],
   },
 
   // SVGR

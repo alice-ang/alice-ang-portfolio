@@ -5,8 +5,8 @@ import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { Footer } from '@/components/layout/Footer';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className=' overflow-hidden bg-zinc-50 dark:bg-black'>
-      <div className='mx-auto flex max-w-6xl items-center justify-between border border-black bg-slate-100 p-3 dark:border-zinc-700/40 dark:bg-zinc-500 '>
+    <>
+      <div className='mx-auto flex max-w-6xl items-center justify-between border border-black bg-slate-100 p-3 dark:border-zinc-700/40 dark:bg-zinc-700 '>
         <div
           className='itemx-center
          flex'
@@ -25,6 +25,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Footer />
       </div>
       <BackToTop />
-    </div>
+    </>
   );
 }
