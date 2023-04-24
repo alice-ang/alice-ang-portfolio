@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className='bg-zinc-50 dark:bg-black'>
-      <div className='mx-auto flex max-w-6xl items-center justify-between border border-black bg-slate-100 p-3 dark:bg-zinc-500 '>
+      <div className='mx-auto flex max-w-6xl items-center justify-between border border-black bg-slate-100 p-3 dark:border-zinc-700/40 dark:bg-zinc-500 '>
         <div
           className='itemx-center
          flex'
@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <DarkModeToggle />
         </div>
       </div>
-      <div className='mx-auto min-h-screen max-w-6xl border-x border-black bg-white pt-8 shadow  dark:bg-zinc-800'>
+      <div className='mx-auto min-h-screen max-w-6xl border-x border-black bg-white shadow dark:border-zinc-700/40  dark:bg-zinc-800'>
         {children}
         <Footer />
       </div>

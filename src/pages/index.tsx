@@ -12,7 +12,7 @@ export default function HomePage() {
     <Layout>
       <Seo templateTitle='Alice Anglesjö' />
 
-      <section className='mt-16 grid grid-cols-6 gap-8 lg:px-12'>
+      <section className='grid grid-cols-6 gap-8 pt-6 md:pt-12 lg:px-12'>
         <div className='col-span-6 p-8 md:col-span-4'>
           <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
             Lorem ipsum dolor sit amet
@@ -25,7 +25,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className='duration-350 col-span-6 p-8 transition ease-in-out md:col-span-2 md:hover:-rotate-2'>
-          <div className='dark:border-zinc-70 border border-black p-3'>
+          <div className=' border border-black bg-white p-4 shadow-lg dark:border-zinc-600 dark:bg-zinc-700'>
             <Image
               src='/alice.png'
               alt='profil pic'
@@ -34,18 +34,32 @@ export default function HomePage() {
               sizes='100vw'
               className=' h-auto w-full  shadow'
             />
-            <p className='py-4'>Lorem ipsum dolor sit amet</p>
+            <p className='py-4 '>Lorem ipsum dolor sit amet</p>
           </div>
         </div>
       </section>
       <section className=' grid grid-cols-6 gap-6 lg:px-12'>
-        <div className='col-span-6 rounded p-4 md:col-span-4 md:p-6 '>
-          <nav aria-label='sidebar' className='sticky top-4'>
+        <div className='col-span-6 md:col-span-4'>
+          <div aria-label='sidebar' className='sticky top-4'>
             {[0, 1, 2, 3].map((i) => (
-              <div className=' rounded-2xl p-8 hover:bg-zinc-100' key={i}>
+              <article
+                className='rounded-2xl p-8 hover:bg-zinc-100 dark:hover:bg-zinc-700'
+                key={i}
+              >
                 <div className='flex items-center justify-between'>
                   <div className='flex flex-col'>
-                    <p className='text-sm'>hej</p>
+                    <time
+                      className='relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 dark:text-zinc-500'
+                      dateTime='2022-09-05'
+                    >
+                      <span
+                        className='absolute inset-y-0 left-0 flex items-center'
+                        aria-hidden='true'
+                      >
+                        <span className='h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500'></span>
+                      </span>
+                      September 5, 2022
+                    </time>
                     <h3 className='text-2xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 '>
                       Bostadsbetyg
                     </h3>
@@ -77,45 +91,41 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </article>
             ))}
-          </nav>
+          </div>
         </div>
-        <div className=' col-span-6 md:col-span-2 md:p-6 '>
-          <div
-            aria-label='sidebar'
-            className='sticky top-4  border-l border-black p-8'
-          >
-            <h4 className='text-center text-xl font-extrabold tracking-tight text-gray-700 sm:text-3xl'>
+        <div className='order-first col-span-6 border-l p-8 dark:border-zinc-700  md:order-last  md:col-span-2 md:border-black md:p-6'>
+          <div aria-label='sidebar' className='sticky top-4'>
+            <h3 className='text-2xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 '>
               Work
-            </h4>
+            </h3>
+            <ul>
+              <li className='flex items-center justify-between text-zinc-600 dark:text-zinc-400'>
+                <span className='flex items-center'>
+                  <Image
+                    src='/alice.png'
+                    alt='profil pic'
+                    width='0'
+                    height='0'
+                    sizes='100vw'
+                    className=' mr-3 h-9 w-9 rounded-full bg-white p-1'
+                  />
+                  <div>
+                    <p>Petli</p>
+                    <p className='text-xs'>Frontend developer</p>
+                  </div>{' '}
+                </span>
+                <p className='text-sm'>2022</p>
+              </li>
+            </ul>
+            <a href='/profile.pdf' download='profile.pdf'>
+              <button className='w-full rounded-md bg-zinc-100 px-4 py-2 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-600/80 dark:hover:text-zinc-50'>
+                Download CV
+              </button>
+            </a>
           </div>
         </div>
-        {/* <div className='border-grey-300 col-span-6 rounded-2xl border px-6 py-8 md:col-span-2 '>
-          <div className='flex pb-6'>
-            <MdWork size={22} className='text-zinc-300' />
-            <p className='ml-4 text-base'>Arbete</p>
-          </div>
-          <ul>
-            {[0, 1, 2].map((i) => (
-              <li className='flex items-center py-2' key={i}>
-                <Image
-                  src='/alice.png'
-                  alt='profil pic'
-                  width='0'
-                  height='0'
-                  sizes='100vw'
-                  className=' mr-3 h-10 w-10 rounded-full p-1 shadow-md'
-                />
-                <div className='flex flex-1 flex-col text-sm'>
-                  <p>Petli</p>
-                  <p className='text-zinc-400'>Frontend utvecklare</p>
-                </div>
-                <p className='text-sm text-zinc-500'>jun - dec 2022</p>
-              </li>
-            ))}
-          </ul>
-        </div> */}
       </section>
     </Layout>
   );
