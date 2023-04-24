@@ -1,3 +1,5 @@
+import { PortableTextBlock } from '@portabletext/types';
+
 type OpenGraphType = {
   siteName: string;
   description: string;
@@ -39,3 +41,10 @@ export function getFromSessionStorage(key: string): string | null {
   }
   return null;
 }
+
+export type ProjectType = {
+  title: string;
+  createdAt: string;
+  body: PortableTextBlock;
+  categories: string[];
+};
