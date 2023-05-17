@@ -21,12 +21,14 @@ export const Polaroid = ({ pic, isRotated }: Props) => {
     <a
       href={pic.link}
       target='_blank'
-      onClick={() =>
-        Mixpanel.track('visit_socials', {
-          type: pic.alt,
-          link: pic.link,
-        })
-      }
+      onClick={() => {
+        if (pic.link) {
+          Mixpanel.track('visit_socials', {
+            type: pic.alt,
+            link: pic.link,
+          });
+        }
+      }}
     >
       <div
         className={classNames(
