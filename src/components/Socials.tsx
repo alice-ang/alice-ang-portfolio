@@ -17,7 +17,7 @@ const navigation = [
 
 export const Socials = () => {
   return (
-    <div className='flex justify-start space-x-6 md:order-2'>
+    <div className='flex w-fit space-x-6 md:order-2'>
       {navigation.map((item) => (
         <a
           key={item.name}
