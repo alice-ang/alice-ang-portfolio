@@ -1,29 +1,17 @@
 import groq from 'groq';
 import Image from 'next/image';
-import { AiFillGithub, AiFillHeart, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
 
 import { ProjectType } from '@/lib/helper';
+import { Mixpanel } from '@/lib/mixpanel';
 
 import Layout from '@/components/layout/Layout';
 import { Polaroid } from '@/components/Polaroid';
 import { Project } from '@/components/Project';
 import Seo from '@/components/Seo';
+import { Socials } from '@/components/Socials';
 
 import client from '../../client';
-
-const socials = [
-  {
-    name: 'Linkedin',
-    href: 'https://www.linkedin.com/in/alice-anglesj%C3%B6-9503121a7/',
-    icon: AiFillLinkedin,
-  },
-
-  {
-    name: 'GitHub',
-    href: 'https://github.com/alice-ang',
-    icon: AiFillGithub,
-  },
-];
 
 const images = [
   {
@@ -40,6 +28,7 @@ const images = [
   {
     icon: AiFillHeart,
     url: '/doggo.png',
+    link: 'https://www.instagram.com/martaparta2020/',
     alt: 'Little Märta',
   },
 
@@ -52,6 +41,7 @@ const images = [
     icon: null,
     url: '/quizzly.png',
     alt: 'Quizzly app',
+    // link: 'https://www.get-flick.app/',
   },
 ];
 
@@ -89,33 +79,19 @@ const HomePage = ({ props }: any) => {
         <Seo templateTitle='Alice Anglesjö' />
 
         <section className='grid grid-cols-6 gap-8 pt-6 md:pt-12 lg:px-12'>
-          <div className='col-span-6 p-8 md:col-span-4'>
+          <div className=' col-span-6 p-8 md:col-span-4'>
             <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
               Hello, I'm Alice 👋
             </h1>
-            <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
+            <p className='my-4 text-base text-zinc-600 dark:text-zinc-400'>
               Frontend developer who likes to try out different technologies.
               When I am not in front of the computer doing either 👩🏻‍💻 or 🎮, I
               enjoy spending some quality time with my dog. I am currently a
               part of the startup program at Science Park Skövde spending all of
               my time trying to start a company.
             </p>
-            <span className='mt-4 flex items-center'>
-              {socials.map((social) => (
-                <a
-                  key={social.name}
-                  target='_blank'
-                  href={social.href}
-                  className='hover:text-palette-yellow text-black'
-                >
-                  <span className='sr-only'>{social.name}</span>
-                  <social.icon
-                    className='dark:fill-palette-yellow mr-2 h-6 w-6 dark:hover:fill-zinc-600'
-                    aria-hidden='true'
-                  />
-                </a>
-              ))}
-            </span>
+
+            <Socials />
           </div>
         </section>
         <section className='my-8 flex justify-center gap-5 py-4 sm:gap-8'>
@@ -164,7 +140,11 @@ const HomePage = ({ props }: any) => {
                   </li>
                 ))}
               </ul>
-              <a href='/alice_anglesjo.pdf' download='alice_anglesjo.pdf'>
+              <a
+                href='/alice_anglesjo.pdf'
+                download='alice_anglesjo.pdf'
+                onClick={() => Mixpanel.track('download_cv')}
+              >
                 <button className=' w-full rounded-md border border-black bg-zinc-100 px-4 py-2 text-zinc-900 dark:bg-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-600/80 dark:hover:text-zinc-50'>
                   Download full CV
                 </button>

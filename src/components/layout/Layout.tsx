@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Mixpanel } from '@/lib/mixpanel';
+
 import { BackToTop } from '@/components/BackToTop';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { Footer } from '@/components/layout/Footer';
@@ -16,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className='h-3 w-3 rounded-full bg-green-500'></div>
         </div>
 
-        <div>
+        <div onClick={() => Mixpanel.track('toggle_darkmode')}>
           <DarkModeToggle />
         </div>
       </div>
