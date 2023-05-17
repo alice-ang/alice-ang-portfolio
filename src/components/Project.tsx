@@ -1,9 +1,9 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { useState } from 'react';
-import { AiFillGithub, AiFillSmile } from 'react-icons/ai';
 
 import { ProjectType } from '@/lib/helper';
+import { Mixpanel } from '@/lib/mixpanel';
 import { useModal } from '@/lib/useModal';
 
 import { Modal } from '@/components/Modal';
@@ -22,7 +22,12 @@ export const Project = ({ project }: Props) => {
     <>
       <article
         className='cursor-pointer rounded-2xl p-8 hover:bg-zinc-100 dark:hover:bg-zinc-700'
-        onClick={toggle}
+        onClick={() => {
+          toggle();
+          Mixpanel.track('open_project', {
+            name: project.title,
+          });
+        }}
       >
         <div className='flex items-center justify-between'>
           <div className='flex flex-col'>
@@ -92,18 +97,37 @@ export const Project = ({ project }: Props) => {
               <h3 className='text-zinc-800 dark:text-zinc-100'>
                 {project.title}
               </h3>
-              <span className='flex items-center'>
+              <span className='flex items-center space-x-4 py-1'>
                 {project.githubUrl && (
-                  <a href={project.githubUrl} target='_blank'>
-                    <AiFillGithub className='dark:fill-palette-yellow my-2 mr-2 h-6 w-6 cursor-pointer dark:hover:fill-zinc-600' />
+                  <a
+                    href={project.githubUrl}
+                    target='_blank'
+                    onClick={() =>
+                      Mixpanel.track('visit_project', {
+                        type: 'github',
+                        link: project.githubUrl,
+                      })
+                    }
+                  >
+                    <p className='hover:text-palette-green dark:text-palette-green text-sm font-semibold hover:underline'>
+                      GitHub
+                    </p>
                   </a>
                 )}
                 {project.demoUrl && (
-                  <a href={project.demoUrl} target='_blank'>
-                    <AiFillSmile
-                      className='dark:fill-palette-yellow my-2 mr-2 h-6 w-6 cursor-pointer dark:hover:fill-zinc-600'
-                      cursor-pointer
-                    />
+                  <a
+                    href={project.demoUrl}
+                    target='_blank'
+                    onClick={() =>
+                      Mixpanel.track('visit_project', {
+                        type: 'demo',
+                        link: project.demoUrl,
+                      })
+                    }
+                  >
+                    <p className='hover:text-palette-green dark:text-palette-green text-sm font-semibold hover:underline'>
+                      Demo
+                    </p>
                   </a>
                 )}
               </span>
