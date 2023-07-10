@@ -22,7 +22,8 @@ const images = [
   {
     icon: null,
     url: '/van.png',
-    alt: 'Me and my white van',
+    alt: 'Me and Vanjie',
+    link: 'https://www.instagram.com/aliceinthewonderwan/',
   },
 
   {
@@ -39,16 +40,16 @@ const images = [
   },
   {
     icon: null,
-    url: '/quizzly.png',
-    alt: 'Quizzly app',
-    // link: 'https://www.get-flick.app/',
+    url: '/flick.png',
+    alt: 'flick app',
+    link: 'https://www.get-flick.app/',
   },
 ];
 
 const work = [
   {
-    logo: '/quizzly.png',
-    company: 'Quizzly',
+    logo: '/science.png',
+    company: 'Skövde Science Park',
     role: 'Developer / aspiring founder',
     start: '2023',
     end: 'current',

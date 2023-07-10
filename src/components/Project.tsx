@@ -49,19 +49,23 @@ export const Project = ({ project }: Props) => {
               </h3>
             </div>
           </div>
-
-          {/* <Image
-            src='/alice.png'
-            alt='profil pic'
-            width='0'
-            height='0'
-            sizes='100vw'
-            className=' h-9 w-9  rounded-full shadow'
-          /> */}
         </div>
 
-        <span className='mt-4 text-base text-zinc-600 dark:text-zinc-400'>
-          <PortableText value={project.body} />
+        <span className='mt-4 grid grid-cols-2 text-base text-zinc-600 dark:text-zinc-400'>
+          <div className='col-span-2 md:col-span-1'>
+            <PortableText value={project.body} />
+          </div>
+
+          {project.imagesGallery && (
+            <Image
+              src={project.imagesGallery[0]}
+              alt={project.title}
+              width='0'
+              height='0'
+              sizes='100vw'
+              className=' col-span-2 my-4 h-full w-full rounded border border-black object-cover shadow md:col-span-1 md:mx-4 md:my-0'
+            />
+          )}
         </span>
       </article>
       <Modal
@@ -138,7 +142,7 @@ export const Project = ({ project }: Props) => {
               <div className='mt-4 flex flex-wrap items-center'>
                 {project.categories.map((category, i) => (
                   <div
-                    className='bg-palette-yellow mb-2 mr-3 rounded-full border border-black px-4 py-1 text-xs text-black
+                    className='dark:bg-palette-yellow mb-2 mr-3 rounded-full border border-black bg-black px-4 py-1 text-xs text-white dark:text-black
                     md:mr-4'
                     key={i}
                   >
