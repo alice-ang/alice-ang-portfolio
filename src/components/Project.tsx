@@ -56,9 +56,9 @@ export const Project = ({ project }: Props) => {
             <PortableText value={project.body} />
           </div>
 
-          {project.imagesGallery && (
+          {project.mainImage && (
             <Image
-              src={project.imagesGallery[0]}
+              src={project.mainImage}
               alt={project.title}
               width='0'
               height='0'
